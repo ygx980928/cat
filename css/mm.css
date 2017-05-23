@@ -1,0 +1,74 @@
+  *{
+		   	margin: 0;
+		   	padding: 0;
+		   }
+		   body,html{
+		   	width: 100%;
+		   }
+			div{
+				width: 100%;
+				height: 100%;
+				background:url(../img/bg.png) no-repeat;
+				background-size:100% 100% ;
+				position: absolute;
+			}
+			.tp{
+				width: 567px;
+				height: 567px;
+				margin: 70px 35px;
+				opacity: 0;
+			}
+			.num1{
+				position: absolute;
+				/*left: 50%;*/
+				margin-left: -252px;
+				top: 746px;
+				
+			}
+			
+			#page9b{
+				width: 100%;
+				height: 100%;
+				background-color:skyblue ;
+				background-size: 100% 100%;
+				opacity: 0.5;
+				position: absolute;
+				top: 0px;
+				
+			}
+			#page9bp{
+				position: absolute;
+				
+				top: 200px;
+				left: 60px;
+			}
+			#num3{
+				width: 238px;
+				height: 137px;
+			}
+			#num4{
+				width: 388px;
+				height: 137px;
+			}
+			#num5{
+				width: 358px;
+				height: 137px;
+			}
+			#num6{
+				width: 268px;
+				height: 101px;
+			}
+			#num7{
+				width: 418px;
+				height: 138px;
+			}
+			#num8{
+				width: 388px;
+				height: 138px;
+			}
+      #img1{
+      	width: 100%;
+      	height: 100%;
+      	margin-left: 0px;
+      }
+      
