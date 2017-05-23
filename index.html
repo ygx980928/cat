@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style media="screen">
+        .red{
+            background: red;
+        }
+        .blue{
+            border: 2px solid #000;
+        }
+    </style>
+    <script>
+        function addClass(obj,sClass){
+            let reg = new RegExp(sClass+'\\b','img');
+            if(!reg.test(obj.className)){
+                obj.className += ' '+sClass;
+            }
+        }
+        window.onload = ()=>{
+            let oUl = document.querySelector('ul');
+            let aLi = oUl.children;
+            let oBtn = document.querySelector('button');
+
+            oBtn.onclick = ()=>{
+                let oLi3 = document.getElementById('li3');
+                //oLi3.className = 'red';
+                addClass(oLi3,'red')
+            };
+
+        };
+    </script>
+</head>
+<body>
+<button>测试</button>
+<ul>
+    <li>111111111111</li>
+    <li>2222222222222</li>
+    <li id="li3" class="blue 2red">33333333333</li>
+    <li>444444444444</li>
+    <li class="red">55555555555555</li>
+    <li>666666666666666</li>
+    <li>7777777777777</li>
+    <li>888888888888888</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
