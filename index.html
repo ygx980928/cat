@@ -1,114 +1,64 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
-		<title>Shining for English</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" type="text/css" href="css/common.css" />
-		<link rel="stylesheet" href="css/home.css" />
+        <meta name="apple-touch-fullscreen" content="yes"/>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <title>30line 3D</title>
+        <style>
+        html,body{background: #000; margin: 0;padding: 0;}
+        </style>
 	</head>
 
 	<body>
-		<header>
-			<div class="headerContent">
-				<a  href="index.html" class="logolink">
-					<img src="img/logo.png" title="Shining for English" alt="SHING" />
-				</a>
-				<nav>
-					<ul id="headNav">
-						<li>
-							<a  href="index.html" title="Home"><span class="navBorderOne">Home</span></a>
-						</li>
-						<li>
-							<a  href="about.html" title="ABOUT"><span class="navBorder">ABOUT</span></a>
-						</li>
-						<li>
-							<a  href="Renderings.html" title="Renderings"><span class="navBorder">Renderings</span></a>
-						</li>
-						<li>
-							<a  href="bd.html" title="BD Animate"><span class="navBorder">BD Animate</span></a>
-						</li>
-						<li>
-							<a  href="bim.html" title="BIM"><span class="navBorder">BIM</span></a>
-						</li>
-						<li>
-							<a  href="contact.html" title="Contact"><span class="navBorder">Contact</span></a>
-						</li>
-					</ul>
-				</nav>
-				<div class="navbtn">
-					<img src="img/nav.png" alt="菜单" title="menu"/>
-				</div>
-			</div>
-		</header>
-
-		<div class="homeMain">
-			<div class="title">
-				<div class="titleBgLeft"></div>
-				<h1>OUR SERVICE</h1>
-				<div class="titleBgRight"></div>
-			</div>
-			<div class="homeContent">
-				<div class="homeContentBox homeContentBox1">
-					<div class="boxleft">
-						<a href="###" title="Digital Effect Drawing">
-							<img src="img/home1gray.jpg" id="homeimg1" alt="" />
-						</a>
-					</div>
-					<div class="boxright">
-						<h2><a href="###" title="Digital Effect Drawing">Digital Effect Drawing</a></h2>
-						<p>Nosape eaqui non nobitati te ommos deria nos quatur? Pario comnit reris aut modic tecuptat omni ad explanditam verupis nia sequist la et liquo omnia</p>
-					</div>
-				</div>
-
-				<div class="homeContentBox homeContentBox2">
-					<div class="boxleft boxleftSed">
-						<a href="###" title="Building Information Modeling">
-							<img src="img/home2gray.jpg" id="homeimg2" alt="" />
-						</a>
-					</div>
-					<div class="boxright boxrightSed">
-						<h2><a href="###" id="contentRight" title="Building Information Modeling">Building Information Modeling</a></h2>
-						<p id="contentRight1">Nosape eaqui non nobitati te ommos deria nos quatur? Pario comnit reris aut modic tecuptat omni ad explanditam verupis nia sequist la et liquo omnia</p>
-					</div>
-				</div>
-
-				<div class="homeContentBox homeContentBox3">
-					<div class="boxleft">
-						<a href="###" title="3D Animate">
-							<img src="img/home3gray.jpg" id="homeimg3" alt="3D Animate" />
-						</a>
-					</div>
-					<div class="boxright">
-						<h2><a href="###" title="3D Animate">3D Animate</a></h2>
-						<p>Nosape eaqui non nobitati te ommos deria nos quatur? Pario comnit reris aut modic tecuptat omni ad explanditam verupis nia sequist la et liquo omnia</p>
-					</div>
-				</div>
-			</div>
-			<div class="title">
-				<div class="titleBgLeft"></div>
-				<h1>CONTACT US</h1>
-				<div class="titleBgRight"></div>
-			</div>
-		</div>
-
-		<footer>
-			<div class="footerShareOne">
-				<a href="###" title="Share email">
-					<img src="img/email.png" alt="Share email" id="email" />
-				</a>
-			</div>
-			<div class="footerShareTwo">
-				<a href="###" title="facebook"><img src="img/facebook.png" id="facebook" alt="" /></a>
-				<a href="###" title="twitter"><img src="img/twitter.png" id="twitter" alt="" /></a>
-				<a href="###" title="youtube"><img src="img/youtube.png" id="youtube" alt="" /></a>
-				<a href="###" title="linkedln"><img src="img/linkedln.png" id="linkedln" alt="" /></a>
-			</div>
-			<p>Copyright &copy; 1998-2016 ningbo ningbo00.top</p>
-		</footer>
+		<script>
+			;(function () {
+				var W = window.innerWidth, H = window.innerHeight, HW = W/2, HH = H/2, cvs = document.createElement('canvas'), ctx = cvs.getContext('2d'), f = 250, points = [], ro = 2, d = Math.PI/180, sy, cy;
+				init();
+				setInterval(loop, 16);
+				function init () {
+					cvs.width = W;
+					cvs.height = H;
+					document.body.appendChild(cvs);
+					ctx.translate(HW, HH);
+					for (var i = 0; i < 500; i ++) {
+						points.push(new Point3D(rr(-100,100),rr(-100,100),rr(-100,100)));
+					}
+				}
+				function rr (min, max) {
+					return ((Math.random()*(max-min)) + min); 
+				}
+				function Point3D (x, y, z) {
+					this.x = x;
+					this.y = y;
+					this.z = z;
+					this.rotateY = function (a) {
+						cy = Math.cos(a * d);
+						sy = Math.sin(a * d);	
+						var _z = this.z, _x = this.x;
+						this.x = (_x*cy) + (_z*sy);
+						this.z = (_x*-sy) + (_z*cy);	
+					}
+				}
+				function loop () {
+					ctx.fillStyle = 'rgba(0,0,0,0.1)';
+					ctx.fillRect(-HW,-HH, W, H);
+					for (i = 0; i < points.length; i ++) {
+						points[i].rotateY(ro);
+						var scale = f/(f + points[i].z), x2d = (points[i].x * scale), y2d = (points[i].y * scale);
+						ctx.strokeStyle = 'rgb(255,255,255)'; 	
+						ctx.beginPath();
+						ctx.moveTo(x2d,y2d); 
+						ctx.lineTo(x2d+2,y2d); 
+						ctx.stroke(); 
+					}
+				}
+			})();
+			
+		</script>
 	</body>
-	<script src="js/jquery-3.1.0.min.js"></script>
-	<script src="js/common.js"></script>
-
 </html>
