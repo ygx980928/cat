@@ -5,28 +5,14 @@
     <title>Friend</title>
     <link rel="shortcut icon" href="./cat.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <script type="text/javascript">
+        var targetProtocol = "https:";
+        if (window.location.protocol != targetProtocol)
+            window.location.href = targetProtocol +
+                window.location.href.substring(window.location.protocol.length);
+    </script>
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    .box{
-        padding-top: 20px;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 300px;
-    }
-    .img{
-        width: 100%;
-    }
-    p{
-        text-align: center;
-        margin-top: 10px;
-        font-size: 13px;
-        color: #999;
-    }
-</style>
+<style>*{margin: 0;padding: 0;}  .box{padding-top: 20px;margin: 0 auto;width: 100%;max-width: 300px;}  .img{width: 100%;}  p{text-align: center;margin-top: 10px;font-size: 13px;color: #999;}</style>
 <body>
 <div class="box">
     <img src="img/cat.jpg" class="img" alt="">
